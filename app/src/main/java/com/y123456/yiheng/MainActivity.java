@@ -1,5 +1,7 @@
 package com.y123456.yiheng;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +10,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -17,18 +18,14 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_dialpad:
-                    mTextMessage.setText(R.string.title_dialpad);
                     return true;
                 case R.id.navigation_contact:
-                    mTextMessage.setText(R.string.title_contact);
                     // startActivity
                     return true;
                 case R.id.navigation_lastcall:
-                    mTextMessage.setText(R.string.title_lastcall);
                     // startActivity
                     return true;
                 case R.id.navigation_myprofile:
-                    mTextMessage.setText(R.string.title_myprofile);
                     // startActivity
                     return true;
             }
@@ -41,9 +38,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navView.setSelectedItemId(R.id.navigation_dialpad); // 设置进入 Activity 时导航栏的默认选中按钮
     }
 
+    private void call(String phone) {
+        Intent intent=new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+phone));
+        startActivity(intent);
+    }
 }
