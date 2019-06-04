@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">YiHeng</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dialpad">拨号键盘</string>
+    <string name="title_contact">通讯录</string>
+    <string name="title_lastcall">通话记录</string>
+    <string name="title_myprofile">我的</string>
 </resources>
