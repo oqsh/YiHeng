@@ -21,12 +21,15 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_contact:
                     mTextMessage.setText(R.string.title_contact);
+                    // startActivity
                     return true;
                 case R.id.navigation_lastcall:
                     mTextMessage.setText(R.string.title_lastcall);
+                    // startActivity
                     return true;
                 case R.id.navigation_myprofile:
                     mTextMessage.setText(R.string.title_myprofile);
+                    // startActivity
                     return true;
             }
             return false;
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setSelectedItemId(R.id.navigation_dialpad); // 设置进入 Activity 时导航栏的默认选中按钮
     }
 
 }
