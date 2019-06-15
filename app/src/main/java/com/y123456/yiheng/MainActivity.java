@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_dialpad:
                     return true;
                 case R.id.navigation_contact:
-                    // startActivity
+                    Intent intent = new Intent(MainActivity.this, ContactActivity.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_lastcall:
                     // startActivity
@@ -48,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
         navView.setSelectedItemId(R.id.navigation_dialpad); // 设置进入 Activity 时导航栏的默认选中按钮
         bindOnClickListeners();
     }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setSelectedItemId(R.id.navigation_dialpad); // 设置进入 Activity 时导航栏的默认选中按钮
+    }
+
 
     private void bindOnClickListeners() {
         textView = findViewById(R.id.textView);
