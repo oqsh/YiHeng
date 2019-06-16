@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
     TextView textView;
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, bstar, bdash;
     ImageButton iCall, iBack;
@@ -26,14 +27,15 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_dialpad:
                     return true;
                 case R.id.navigation_contact:
-                    Intent intent = new Intent(MainActivity.this, ContactActivity.class);
-                    startActivity(intent);
+                    Intent ca_intent = new Intent(MainActivity.this, ContactActivity.class);
+                    startActivity(ca_intent);
                     return true;
                 case R.id.navigation_lastcall:
                     // startActivity
                     return true;
                 case R.id.navigation_myprofile:
-                    // startActivity
+                    Intent pa_intent = new Intent(MainActivity.this, PreferenceActivity.class);
+                    startActivity(pa_intent);
                     return true;
             }
             return false;

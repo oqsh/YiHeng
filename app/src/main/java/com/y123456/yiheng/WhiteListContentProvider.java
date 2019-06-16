@@ -9,27 +9,24 @@ import android.util.Log;
 
 import java.io.File;
 
-public class ContactContentProvider extends ContentProvider {
-    private static final String TAG = "ContactContentProvider";
-    private static final String table = "contact";
-    
+public class WhiteListContentProvider extends ContentProvider {
+    private static final String TAG = "WhiteListContentProvider";
+    private static final String table = "whitelist";
+        
     private SQLiteDatabase db;
 
-    public ContactContentProvider() {}
+    public WhiteListContentProvider() {}
 
     @Override
     public boolean onCreate() {
         File file = new File(getContext().getFilesDir(), "contact.db3");
         DBOpenHandler dbOpenHandler = new DBOpenHandler(getContext(), file.getAbsolutePath(), null, 1);
         db = dbOpenHandler.getReadableDatabase();
-        final String create_table_sql = "CREATE TABLE IF NOT EXISTS contact("
+        final String create_table_sql = "CREATE TABLE IF NOT EXISTS whitelist("
                                     + "id integer primary key autoincrement, "
-                                    + "name varchar(64), " 
-                                    + "firstChars varchar(64), "
-                                    + "tel varchar(64) unique not null, "
-                                    + "birthday varchar(10) default '0000-00-00', "
-                                    + "in_whitelist integer default 0, "
-                                    + "in_birthRemind integer default 0)";
+                                    + "user_id integer unique not null, "
+                                    + "name varchar(64), "
+                                    + "tel varchar(64) unique not null)";
 
         db.execSQL(create_table_sql);
         return true;
@@ -47,17 +44,17 @@ public class ContactContentProvider extends ContentProvider {
     }
 
     @Override
-    public int update(Uri uri, ContentValues values, String selection, 
+    public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
         return db.update(table, values, selection, selectionArgs);
     }
-
+    
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
         final String groupBy = "";
         final String having = "";
-        return db.query(table, projection, selection, selectionArgs, 
+        return db.query(table, projection, selection, selectionArgs,
                         groupBy, having, sortOrder);
     }
 
@@ -67,5 +64,5 @@ public class ContactContentProvider extends ContentProvider {
         // at the given URI.
         throw new UnsupportedOperationException("Not yet implemented");
     }
-    
+
 }

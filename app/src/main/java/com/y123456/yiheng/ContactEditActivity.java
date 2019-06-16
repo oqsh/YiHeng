@@ -16,7 +16,7 @@ import com.y123456.yiheng.HanziToPinyin.Token;
 import java.util.ArrayList;
 
 public class ContactEditActivity extends AppCompatActivity {
-    Button back, Confirm;
+    private static final String TAG = "ContactEditActivity";
     EditText name, tel, birthday;
     ContactContentProvider ccp;
     int id;

@@ -15,6 +15,7 @@ import android.view.View;
 import android.util.Log;
 
 public class ContactAddActivity extends AppCompatActivity {
+    private static final String TAG = "ContactAddActivity";
     Button back, add;
     EditText name, tel, birthday;
     String name_text, firstChars, tel_text, birthday_text;

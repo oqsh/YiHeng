@@ -378,7 +378,6 @@ public class HanziToPinyin {
             // Check if zh_CN collation data is available
             final Locale locale[] = Collator.getAvailableLocales();
 
-            // 增加的代码，增强。
             final Locale chinaAddition = new Locale("zh");
 
             for (int i = 0; i < locale.length; i++) {
