@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class ContactActivity extends AppCompatActivity {
+    private static final String TAG = "ContactActicity";
     public ArrayList<Info> contact_list_data;
     public ListView lv;
     private String firstChar[] = new String[]{"a", "b", "c", "d", "e", "f", "g", "h", "i",

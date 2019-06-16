@@ -9,6 +9,7 @@ import android.net.Uri;
 import java.io.File;
 
 public class LastcallContentProvider extends ContentProvider {
+    private static final String TAG = "LastCallContentProvider";
     private SQLiteDatabase db;
 
     public LastcallContentProvider() {

@@ -17,6 +17,16 @@
             android:enabled="true"
             android:exported="true"></provider>
         <provider
+            android:name=".WhiteListContentProvider"
+            android:authorities="com.y123456.yiheng.whitelist"
+            android:enabled="true"
+            android:exported="true"></provider>
+        <provider
+            android:name=".BirthRemindContentProvider"
+            android:authorities="com.y123456.yiheng.birthRemind"
+            android:enabled="true"
+            android:exported="true"></provider>
+        <provider
             android:name=".LastcallContentProvider"
             android:authorities="com.y123456.yiheng.lastcall"
             android:enabled="true"
@@ -57,6 +67,20 @@
             android:label="@string/app_name">
         </activity>
 
+        <activity
+            android:name=".PreferenceActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".WhitelistActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".BirthRemindActivity"
+            android:label="@string/app_name">
+        </activity>
 
     </application>
 
