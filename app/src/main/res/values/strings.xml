@@ -4,5 +4,6 @@
     <string name="title_contact">通讯录</string>
     <string name="title_lastcall">通话记录</string>
     <string name="title_myprofile">我的</string>
+    <string name="title_settings">偏好设置</string>
     <string name="star">*</string>
 </resources>

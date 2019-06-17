@@ -21,4 +21,9 @@
         android:icon="@drawable/ic_myprofile_foreground"
         android:title="@string/title_myprofile" />
 
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_foreground"
+        android:title="@string/title_settings" />
+
 </menu>
