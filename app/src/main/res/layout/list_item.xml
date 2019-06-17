@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/InfoName"
+        android:id="@+id/InfoText"
         android:layout_width="260dp"
         android:layout_height="40dp"
         android:textSize="24dp"

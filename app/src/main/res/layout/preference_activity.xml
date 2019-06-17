@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="偏好设置"
+        android:text="个人设置"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,9 +24,9 @@
         android:layout_marginTop="8dp"
         android:onClick="save_preference"
         android:text="保存"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/NotDisturb" />
+        android:background="#00000000"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/label_name"
@@ -35,7 +35,7 @@
         android:text="姓名"
         android:textSize="24sp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="130dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,7 +56,7 @@
         android:text="电话"
         android:textSize="24sp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,7 +77,7 @@
         android:text="生日"
         android:textSize="24sp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="270dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -157,6 +157,44 @@
         android:visibility="gone"
         app:layout_constraintLeft_toRightOf="@id/arrow"
         app:layout_constraintTop_toTopOf="@id/NDstarttime"/>
+
+    <Button
+        android:id="@+id/toWhitelist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toWhitelist"
+        android:text="白名单"
+        android:background="#00000000"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"/>
+
+
+    <Button
+        android:id="@+id/toBirthRemind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toBirthRemind"
+        android:text="生日提醒"
+        android:background="#00000000"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintLeft_toRightOf="@id/toWhitelist"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"/>
+
+
+    <Button
+        android:id="@+id/toSpecialDateRemind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="toSpecialDateRemind"
+        android:text="特殊日期提醒"
+        android:background="#00000000"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintLeft_toRightOf="@id/toBirthRemind"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"/>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/nav_view"
