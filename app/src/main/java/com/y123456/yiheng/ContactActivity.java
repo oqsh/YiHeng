@@ -5,8 +5,11 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -28,17 +31,47 @@ public class ContactActivity extends AppCompatActivity {
     private ArrayList<String> data = new ArrayList<>();
     private LinearLayout container;
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_dialpad:
+                    Intent dp_intent = new Intent(ContactActivity.this, MainActivity.class);
+                    startActivity(dp_intent);
+                    return true;
+                case R.id.navigation_contact:
+                    return true;
+                case R.id.navigation_lastcall:
+                    // startActivity
+                    return true;
+                case R.id.navigation_myprofile:
+                    Intent pa_intent = new Intent(ContactActivity.this, PreferenceActivity.class);
+                    startActivity(pa_intent);
+                    return true;
+            }
+            return false;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_activity);
         info_list();
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setSelectedItemId(R.id.navigation_contact); // 设置进入 Activity 时导航栏的默认选中按钮
     }
 
     @Override
     protected void onResume(){
         super.onResume();
         info_list();
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setSelectedItemId(R.id.navigation_contact); // 设置进入 Activity 时导航栏的默认选中按钮
     }
 
     public void info_list() {
