@@ -198,7 +198,7 @@ public class ContactActivity extends AppCompatActivity {
             name_list.add(contact_list_data.get(i).getName());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                ContactActivity.this, R.layout.list_item, R.id.InfoName, name_list);
+                ContactActivity.this, R.layout.list_item, R.id.InfoText, name_list);
 
         lv.setAdapter(adapter);
 

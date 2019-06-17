@@ -345,6 +345,21 @@ public class PreferenceActivity extends AppCompatActivity {
 //        this.finish();
     }
 
+    public void toWhitelist(View view) {
+        Intent intent = new Intent(PreferenceActivity.this, WhitelistActivity.class);
+        startActivity(intent);
+    }
+
+    public void toBirthRemind(View view) {
+        Intent intent = new Intent(PreferenceActivity.this, BirthRemindActivity.class);
+        startActivity(intent);
+    }
+
+    public void toSpecialDateRemind(View view) {
+        Intent intent = new Intent(PreferenceActivity.this, SpecialDateRemindActivity.class);
+        startActivity(intent);
+    }
+
     public void back(View view) {
         this.finish();
     }

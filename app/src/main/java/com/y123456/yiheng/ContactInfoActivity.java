@@ -212,11 +212,18 @@ public class ContactInfoActivity extends AppCompatActivity {
         String selectionArgs[] = new String[] {String.valueOf(id)};
 
         Uri uri = Uri.parse("content://com.y123456.yiheng.contact");
-        int exit_code = this.getContentResolver().delete(uri, selection, selectionArgs);
-        if(exit_code == 0)
-            Toast.makeText(this, "删除联系人失败", Toast.LENGTH_LONG).show();
-        else
-            Toast.makeText(this, "成功删除联系人", Toast.LENGTH_LONG).show();
+        this.getContentResolver().delete(uri, selection, selectionArgs);
+
+        //删除联系人后清理白名单以及生日提醒中的信息
+        selection = "user_id = ?";
+        uri = Uri.parse("content://com.y123456.yiheng.whitelist");
+        this.getContentResolver().delete(uri, selection, selectionArgs);
+
+        uri = Uri.parse("content://com.y123456.yiheng.birthRemind");
+        this.getContentResolver().delete(uri, selection, selectionArgs);
+
+
+        Toast.makeText(this, "成功删除联系人", Toast.LENGTH_LONG).show();
         this.finish();
     }
 
