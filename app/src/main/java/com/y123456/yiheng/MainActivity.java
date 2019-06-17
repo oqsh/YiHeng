@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
                     // startActivity
                     return true;
                 case R.id.navigation_myprofile:
+                    // startActivity
+                    return true;
+                case R.id.navigation_settings:
                     Intent pa_intent = new Intent(MainActivity.this, PreferenceActivity.class);
                     startActivity(pa_intent);
                     return true;
