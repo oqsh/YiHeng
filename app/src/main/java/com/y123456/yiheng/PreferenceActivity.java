@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -28,11 +31,41 @@ public class PreferenceActivity extends AppCompatActivity {
 
     Switch NotDisturb, BirthRemind, SpecialDateRemind;
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_dialpad:
+                    Intent dp_intent = new Intent(PreferenceActivity.this, MainActivity.class);
+                    startActivity(dp_intent);
+                    return true;
+                case R.id.navigation_contact:
+                    Intent ca_intent = new Intent(PreferenceActivity.this, ContactActivity.class);
+                    startActivity(ca_intent);
+                    return true;
+                case R.id.navigation_lastcall:
+                    // startActivity
+                    return true;
+                case R.id.navigation_myprofile:
+                    // startActivity
+                    return true;
+                case R.id.navigation_settings:
+                    return true;
+            }
+            return false;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preference_activity);
 
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setSelectedItemId(R.id.navigation_settings); // 设置进入 Activity 时导航栏的默认选中按钮
         initdata();
 
         name = (EditText) findViewById(R.id.name);
@@ -309,8 +342,7 @@ public class PreferenceActivity extends AppCompatActivity {
         }
 
         Toast.makeText(this, "成功保存个人信息", Toast.LENGTH_LONG).show();
-
-        this.finish();
+//        this.finish();
     }
 
     public void back(View view) {

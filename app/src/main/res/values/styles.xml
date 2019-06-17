@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- The toolbar will replace the standard action bar, so we
+         need a theme that removes the action bar from the window decor -->
+    <style name="AppNoToolbarTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- Provide decor theme colors -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 </resources>

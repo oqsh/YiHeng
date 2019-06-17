@@ -19,12 +19,12 @@
         android:id="@+id/title"
         android:layout_width="155dp"
         android:layout_height="45dp"
+        android:layout_marginTop="80dp"
         android:text="添加联系人"
         android:textSize="30sp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintLeft_toRightOf="@+id/delete"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/confirm"

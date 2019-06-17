@@ -6,36 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="返回"
-        android:background="#00000000"
-        android:onClick="back"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/title"
-        android:layout_width="155dp"
-        android:layout_height="45dp"
-        android:text="Preference"
-        android:textSize="30sp"
-        android:layout_marginLeft="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        app:layout_constraintLeft_toRightOf="@+id/back"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:text="偏好设置"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="保存"
-        android:background="#00000000"
+        android:layout_marginTop="8dp"
         android:onClick="save_preference"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="保存"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/NotDisturb" />
 
     <TextView
         android:id="@+id/label_name"
@@ -166,5 +157,15 @@
         android:visibility="gone"
         app:layout_constraintLeft_toRightOf="@id/arrow"
         app:layout_constraintTop_toTopOf="@id/NDstarttime"/>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
 </android.support.constraint.ConstraintLayout>
