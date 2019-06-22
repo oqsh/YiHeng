@@ -39,6 +39,7 @@ public class ContactActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_dialpad:
                     Intent dp_intent = new Intent(ContactActivity.this, MainActivity.class);
+                    dp_intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                     startActivity(dp_intent);
                     return true;
                 case R.id.navigation_contact:
@@ -51,6 +52,7 @@ public class ContactActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_settings:
                     Intent pa_intent = new Intent(ContactActivity.this, PreferenceActivity.class);
+                    pa_intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                     startActivity(pa_intent);
                     return true;
             }
