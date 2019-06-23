@@ -27,35 +27,12 @@ public class ContactAddActivity extends AppCompatActivity {
         setContentView(R.layout.contact_add_activity);
     }
 
-    public String getFirstChars(String source){
-        ArrayList<Token> tokens = HanziToPinyin.getInstance().get(source);
-        StringBuilder sb = new StringBuilder();
-        if (tokens != null && tokens.size() > 0) {
-            boolean firstName = true;
-            for (Token token : tokens) {
-                if (Token.PINYIN == token.type) {
-                    if(firstName) {
-                        sb.append(token.target);
-                        firstName = false;
-                    }
-                    else {
-                        sb.append(token.target.charAt(0));
-                    }
-                } else {
-                    sb.append(token.source);
-                }
-            }
-        }
-        return sb.toString().toUpperCase();
-    }
-
     public void add_contact(View view) {
         name = (EditText)findViewById(R.id.name);
         tel = (EditText)findViewById(R.id.tel);
         birthday = (EditText)findViewById(R.id.birthday);
 
         name_text = name.getText().toString();
-        firstChars = getFirstChars(name_text);
         tel_text = tel.getText().toString();
         birthday_text = birthday.getText().toString();
 
@@ -71,7 +48,6 @@ public class ContactAddActivity extends AppCompatActivity {
 
         ContentValues cv = new ContentValues();
         cv.put("name", name_text);
-        cv.put("firstChars", firstChars);
         cv.put("tel", tel_text);
         cv.put("birthday", birthday_text);
 

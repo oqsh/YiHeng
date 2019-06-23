@@ -545,4 +545,26 @@ public class HanziToPinyin {
         tokens.add(new Token(tokenType, str, str));
         sb.setLength(0);
     }
+
+    public String getFirstChars(String source){
+        ArrayList<Token> tokens = get(source);
+        StringBuilder sb = new StringBuilder();
+        if (tokens != null && tokens.size() > 0) {
+            boolean firstName = true;
+            for (Token token : tokens) {
+                if (Token.PINYIN == token.type) {
+                    if(firstName) {
+                        sb.append(token.target);
+                        firstName = false;
+                    }
+                    else {
+                        sb.append(token.target.charAt(0));
+                    }
+                } else {
+                    sb.append(token.source);
+                }
+            }
+        }
+        return sb.toString().toUpperCase();
+    }
 }
