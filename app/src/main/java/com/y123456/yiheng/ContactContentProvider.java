@@ -37,6 +37,7 @@ public class ContactContentProvider extends ContentProvider {
 
     @Override
     public Uri insert(Uri uri, ContentValues values) {
+        values.put("firstChars", HanziToPinyin.getInstance().getFirstChars(values.getAsString("name")));
         db.insert(table, null, values);
         return uri;
     }
@@ -49,6 +50,7 @@ public class ContactContentProvider extends ContentProvider {
     @Override
     public int update(Uri uri, ContentValues values, String selection, 
                       String[] selectionArgs) {
+        values.put("firstChars", HanziToPinyin.getInstance().getFirstChars(values.getAsString("name")));
         return db.update(table, values, selection, selectionArgs);
     }
 
