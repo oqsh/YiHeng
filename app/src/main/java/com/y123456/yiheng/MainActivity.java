@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_contact:
                     Intent ca_intent = new Intent(MainActivity.this, ContactActivity.class);
+                    ca_intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                     startActivity(ca_intent);
                     return true;
                 case R.id.navigation_lastcall:
@@ -38,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
                     // startActivity
                     return true;
                 case R.id.navigation_settings:
-                    Intent pa_intent = new Intent(MainActivity.this, PreferenceActivity.class);
-                    startActivity(pa_intent);
+                    Intent se_intent = new Intent(MainActivity.this, PreferenceActivity.class);
+                    se_intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    startActivity(se_intent);
                     return true;
             }
             return false;
