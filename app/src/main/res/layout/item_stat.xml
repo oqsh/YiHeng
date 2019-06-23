@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10.0dip">
+
+    <TextView
+        android:id="@+id/calllog_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0.0dip"
+        android:text="通话时间段"
+        android:textSize="20.0sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/calllog_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/calllog_name"
+        android:layout_alignBottom="@+id/calllog_name"
+        android:layout_marginLeft="120.0dip"
+        android:text="通话次数"
+        android:textSize="20.0sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/calllog_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/calllog_name"
+        android:layout_alignBottom="@+id/calllog_name"
+        android:layout_marginLeft="180.0dip"
+        android:text="通话时长"
+        android:textSize="20.0sp"
+        android:textStyle="bold" />
+</RelativeLayout>

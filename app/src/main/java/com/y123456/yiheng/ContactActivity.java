@@ -44,7 +44,8 @@ public class ContactActivity extends AppCompatActivity {
                 case R.id.navigation_contact:
                     return true;
                 case R.id.navigation_lastcall:
-                    // startActivity
+                    Intent calllog_intent = new Intent(ContactActivity.this, CalllogActivity.class);
+                    startActivity(calllog_intent);
                     return true;
                 case R.id.navigation_myprofile:
                     // startActivity

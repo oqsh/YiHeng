@@ -46,7 +46,8 @@ public class PreferenceActivity extends AppCompatActivity {
                     startActivity(ca_intent);
                     return true;
                 case R.id.navigation_lastcall:
-                    // startActivity
+                    Intent calllog_intent = new Intent(PreferenceActivity.this, CalllogActivity.class);
+                    startActivity(calllog_intent);
                     return true;
                 case R.id.navigation_myprofile:
                     // startActivity
