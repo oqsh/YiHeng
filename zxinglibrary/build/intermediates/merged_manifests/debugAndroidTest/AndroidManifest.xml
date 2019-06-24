@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yzq.zxinglibrary.test" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="27" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:functionalTest="false"
+        android:handleProfiling="false"
+        android:label="Tests for com.yzq.zxinglibrary.test"
+        android:targetPackage="com.yzq.zxinglibrary.test" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application android:debuggable="true" >
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name="com.yzq.zxinglibrary.android.CaptureActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+    </application>
+
+</manifest>
