@@ -125,6 +125,7 @@ public class StatActivity extends AppCompatActivity {
         );
         // 3.通过Cursor获得数据
         List<Map<String, String>> list = new ArrayList<>();
+        if (cursor == null) return list;
         int num_day=0,time_day=0;
         int num_week=0,time_week=0;
         int num_month=0,time_month=0;

@@ -46,6 +46,7 @@ public class ContactActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_lastcall:
                     Intent calllog_intent = new Intent(ContactActivity.this, CalllogActivity.class);
+                    calllog_intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                     startActivity(calllog_intent);
                     return true;
                 case R.id.navigation_myprofile:

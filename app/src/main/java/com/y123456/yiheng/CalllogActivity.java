@@ -53,6 +53,7 @@ public class CalllogActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_dialpad:
                     Intent dp_intent = new Intent(CalllogActivity.this, MainActivity.class);
+                    dp_intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                     startActivity(dp_intent);
                     return true;
                 case R.id.navigation_contact:
@@ -167,6 +168,7 @@ public class CalllogActivity extends AppCompatActivity {
         );
         // 3.通过Cursor获得数据
         List<Map<String, String>> list = new ArrayList<>();
+        if (cursor == null) return list;
         while (cursor.moveToNext()) {
             String name = cursor.getString(cursor.getColumnIndex(CallLog.Calls.CACHED_NAME));
             String number = cursor.getString(cursor.getColumnIndex(CallLog.Calls.NUMBER));
